@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+  </head>
+  <body>
+    <h1>My Contacts</h1>
+    <input type="text" id="query" placeholder="Name"/>
+    <input type="text" id="Num" placeholder="Number"/>
+    <button id="btn">Search</button>
+    <button id="add">Add Contact</button>
+    <ul id="result">
+    </ul>
+  </body>
+  <script src="{{ url_for('static', filename='main.js' ) }}"></script>
+</html>
