@@ -24,19 +24,33 @@ const copyContent = async (event) => {
 };
 
 const spans = document.getElementsByTagName("span");
-for (let i = 0; i < spans.length; i++) {
-  spans[i].addEventListener("click", copyContent);
+for (let span of spans) {
+  span.addEventListener("click", copyContent);
 }
 
-async function fetch_results(){
-    var q = query.value
-    var data = await fetch("/search?q=" + q)
-    var res = await data.json()
-    result.innerHTML = ""
-    for(var i=0; i<Object.keys(res).length; i++){
-        result.innerHTML += '<li>'+ res[i]["name"] + ': <span onclick="copyContent(event)">' + res[i]["no"] + '</span></li>'
-    }
+async function fetch_results() {
+  const ul = document.getElementsByTagName("ul")[0];
+  ul.style.opacity = 0;
+  ul.style.transition = "opacity 0s";
+  var q = query.value;
+  var data = await fetch("/search?q=" + q);
+  var res = await data.json();
+  result.innerHTML = "";
+  for (var i = 0; i < Object.keys(res).length; i++) {
+    result.innerHTML +=
+      '<li>' +
+      res[i]["name"] +
+      ' <span onclick="copyContent(event)">' +
+      res[i]["no"] +
+      "</span></li>";
+  }
+  setTimeout(function() {
+    ul.style.opacity = 1;
+  }, 200);
+    ul.style.transition = "opacity 0.1s";
 }
+
+
 
 async function add_name(){
     var name = query.value
@@ -44,6 +58,9 @@ async function add_name(){
     var out = await fetch("/add?name=" + name + "&number=" + number)
     fetch_results()
 }
+
+fetch_results()
+
 Addbtn.onclick = add_name
 btn.onclick = fetch_results
 query.onkeyup = fetch_results

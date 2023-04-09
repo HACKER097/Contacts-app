@@ -2,11 +2,13 @@ body{
     background-color: #11111b;
     font-family: monospace;
     color: #cba6f7;
-    font-size: 20px;
-    align-items: center;
+    font-size: 200%;
+    text-align: center;
 }
 
 button{
+    width: 150px;
+    margin-top: 15px;
     background-color: #45475a;
     font-family: monospace;
     font-size: 15px;
@@ -31,7 +33,7 @@ input{
     border: 2px solid;
     border-radius: 10px;
     border-color: #cba6f7;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 input:hover{
@@ -40,10 +42,29 @@ input:hover{
 }
 
 li{
+    text-align: left;
+    margin-left: 35%;
+    margin-top: 10px;
     color: #cba6f7;
     transition: all 0.2s;
 }
 
 li:hover{
     color: #eba0ac;
+    margin-left: 36%;
 }
+
+
+span{
+    margin: 0;
+    opacity: 0;
+    font-size: 0%;
+    color: #fab387;
+    transition: 0.2s;
+}
+
+li:hover span{
+    opacity: 100;
+    font-size: 80%;
+}
+
