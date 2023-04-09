@@ -1,0 +1,49 @@
+body{
+    background-color: #11111b;
+    font-family: monospace;
+    color: #cba6f7;
+    font-size: 20px;
+    align-items: center;
+}
+
+button{
+    background-color: #45475a;
+    font-family: monospace;
+    font-size: 15px;
+    color: #cdd6f4;
+    padding: 7px;
+    border-radius: 10px;
+    border: none;
+    transition: all 1s;
+}
+
+button:hover{
+    color: #cba5f7;
+    background-color: #313244;
+}
+
+input{
+    background-color: #6c7086;
+    font-family: monospace;
+    font-size: 15px;
+    color: #cdd6f4;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: #cba6f7;
+    transition: all 1s;
+}
+
+input:hover{
+    background-color: #45475a;
+    color: #cba6f7;
+}
+
+li{
+    color: #cba6f7;
+    transition: all 0.2s;
+}
+
+li:hover{
+    color: #eba0ac;
+}

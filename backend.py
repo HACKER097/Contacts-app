@@ -31,7 +31,7 @@ def search():
     con = sqlite3.connect("Contacts.db")
     cur = con.cursor()
 
-    cur.execute(f'SELECT * FROM CONTACTS WHERE FName || " " || Lname LIKE "%{q}%"')
+    cur.execute(f'SELECT * FROM CONTACTS WHERE FName || " " || Lname LIKE "%{q}%" ORDER BY Fname, Lname')
     output = cur.fetchall()
     con.close()
 
